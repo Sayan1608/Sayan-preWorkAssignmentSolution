@@ -34,6 +34,11 @@ public class Main {
 		System.out.print("Enter the height of the pattern:: ");
 		int h = in.nextInt();
 		System.out.println();
+		
+		if(h<=1) {
+			System.out.println("Please enter a valid number\n");
+			return;
+		}
 
 		for (int i = 1; i <= h; i++) {
 			for (int j = h; j >= i; j--) {
@@ -78,8 +83,16 @@ public class Main {
 		System.out.print("Enter the length of the series:: ");
 		int l = in.nextInt();
 		
+		if(l<0) {
+			System.out.println("Please enter a valid range");
+			return;
+		}else if(l==0) {
+			System.out.println(first);
+			return;
+		}
+		
 		System.out.print(first + " " + second + " ");
-		for(int i=2;i<l;i++) {
+		for(int i=1;i<l;i++) {
 			fiboNum = first+second;
 			first = second;
 			second = fiboNum;
